@@ -1,0 +1,138 @@
+<head>
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+
+</head>
+<body>
+<% if (!user) { %>
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Linkedin Bookmark</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+
+
+    </div>
+  </div>
+</nav>
+<br><br>
+<div class='contaier'>
+<div class='row'>
+
+<div class='col-md-5'>
+</div>
+	<div class='col-md-6'
+
+	<b>Welcome! Please log in.</b><br><br>
+	<h1><a href="/auth/linkedin">Linkedin</a><h1>
+</div>
+	<div class='col-md-1'>
+	</div>
+</div>
+</div>
+
+<% } else { %>
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"  >Linkedin Bookmark</a>
+  <div class="collapse navbar-collapse  " id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a class="nav-item nav-link ACTIVE " href="/logout">Logout <span class="sr-only">(current)</span></a>
+
+
+    </div>
+  </div>
+</nav>
+<br>
+<div class='container'>
+	<div class='row'>
+	<h3>  Hello, <%= user.displayName %></h3>
+	<h3>.Welcome to the linkedin bookmark</h3><br>
+	<br>
+</div>
+	<div ng-app="app" ng-controller="c1">
+<input type="text" class='form-control' ng-model="names" placeholder="Search bookmarks">
+		<div ng-repeat="x in data|filter:names">
+			<br>
+			<div class='card'>
+				<div class='card-block'>
+			<a href={{x.url}} target="_blank">{{x.name}}</a>
+			<br><br>
+			<div class="row">
+<div class="col-md-3">
+	<img ng-src={{x.photo}} height="100" width="100">
+</div>
+			<div class="col-md-9">
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h6>{{x.title}}</h6>
+
+			{{x.place}}
+
+</div>
+			</div>
+<br>
+<div class="row">
+<div class="col-md-11">
+	note : <u>{{x.note}}</u>
+</div>
+
+				<div class="col-md-1">
+					<button class="btn btn-danger btn-sm" ng-click="delete($index)">Delete</button>
+				</div>
+</div>
+
+		</div>
+	</div>
+</div>
+	</div>
+
+</div>
+<% } %>
+
+<script>
+var module=angular.module('app',['ngRoute','ngCookies']);
+module.controller("c1",function($scope,$http,$route,$window){
+
+	$http.get("/bookmarktest")
+  .then(function(response){
+
+
+     console.log(response.data[0].bookmarks);
+		 $scope.data=response.data[0].bookmarks;
+   });
+$scope.name="nithin";
+$scope.delete=function(x){
+	console.log(x);
+	$http.delete("/delete/"+x).then(
+function(response){
+	$http.get("/bookmarktest")
+	.then(function(response){
+
+
+
+		 $scope.data=response.data[0].bookmarks;
+		 $window.location.reload();
+	 });
+
+
+},
+function(response){}
+
+	);
+
+}
+});
+
+
+
+</script>
+</body>
