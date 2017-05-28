@@ -4,6 +4,7 @@ var express = require('express')
   var bodyParser=require('body-parser');
   var mongoose=require('mongoose');
   mongoose.connect('mongodb://nithing:Ravinder8!@ds121171.mlab.com:21171/linkedinbookmark');
+
 var port=process.env.PORT||3000;
 
 // API Access link for creating client ID and secret:
@@ -72,9 +73,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(app.router);
 app.use(express.static(__dirname + '/public'));
-app.configure(function() {
 
-});
 var Schema = mongoose.Schema;
 var Users=new Schema({
   name :{type:String},
