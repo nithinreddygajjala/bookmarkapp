@@ -1,0 +1,44 @@
+
+{
+  "manifest_version": 2,
+
+  "name": "Nithin Reddy Gajjala",
+  "description": "Test purpose",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "background":{
+    "scripts":["jquery-3.1.1.js","background.js"]
+  },
+  "permissions": [
+   "activeTab"
+ ],"content_scripts": [
+    {
+        "matches": ["https://www.linkedin.com/*"],
+        "css":["bootstrap.css"],
+        "js": ["jquery-3.1.1.js","bootstrap.min.js","content.js"],
+        "run_at":"document_end"
+
+    }
+],
+"permissions": [
+
+  "tabs",
+  "http://localhost:8000/*",
+  "https://platform.linkedin.com/in.js/*",
+  "https://www.linkedin.com/*",
+
+  "storage"
+],
+"web_accessible_resources":[
+  "modal.html","bootstrap.min.js","bootstrap.css"
+
+
+
+
+  ]
+
+}
