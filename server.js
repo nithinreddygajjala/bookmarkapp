@@ -1,6 +1,6 @@
 var express = require('express')
   , passport = require('passport')
-  , LinkedinStrategy = require('../lib').Strategy;
+  , LinkedinStrategy = require('./lib').Strategy;
   var bodyParser=require('body-parser');
   var mongoose=require('mongoose');
   mongoose.connect('mongodb://nithing:Ravinder8!@ds121171.mlab.com:21171/linkedinbookmark');
