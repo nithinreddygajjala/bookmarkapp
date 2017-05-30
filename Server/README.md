@@ -5,6 +5,5 @@
 # 2. Select load unpacked extension .
 # 3. Select Chrome Extension folder .
 # 4. Chrome extension will be visible on the toolbar.
-# 5. Enter "npm install" 
-# 6. RUN   "node server"
-# 7. Now backend server for the chrome extension is running .
+# 5. Login using your Linkedin Credentials .
+# 6. Open any linkedin profile to bookmark it.
