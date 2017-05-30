@@ -37,7 +37,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new LinkedinStrategy({
     clientID:     LINKEDIN_CLIENT_ID,
     clientSecret: LINKEDIN_CLIENT_SECRET,
-    callbackURL:  "http://localhost:3000/auth/linkedin/callback",
+    callbackURL:  "https://linkbookmark.herokuapp.com/auth/linkedin/callback",
     scope:        [ 'r_basicprofile', 'r_emailaddress'],
     passReqToCallback: true
   },
