@@ -71,7 +71,7 @@ app.use(session({ secret: 'keyboard cat' }));
 // persistent login sessions (recommended).
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(app.router);
+//app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 
 var Schema = mongoose.Schema;
