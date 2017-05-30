@@ -45,7 +45,7 @@
     "express": "*",
     "express-session": "^1.15.3",
     "mongodb": "*",
-    "mongoose": "*",
+    "mongoose": "^4.7.4",
     "passport": "*",
     "passport-oauth2": "*",
     "underscore": "*"
