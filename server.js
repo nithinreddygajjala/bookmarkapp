@@ -3,6 +3,7 @@ var express = require('express')
   , LinkedinStrategy = require('./lib').Strategy;
   var bodyParser=require('body-parser');
   var mongoose=require('mongoose');
+  var cookieParser=require('cookie-parser');
   mongoose.connect('mongodb://nithing:Ravinder8!@ds121171.mlab.com:21171/linkedinbookmark');
 
 var port=process.env.PORT||3000;
@@ -62,7 +63,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.use(express.cookieParser());
+app.use(cookieParser());
 app.use(express.urlencoded());
 app.use(express.json());
 
