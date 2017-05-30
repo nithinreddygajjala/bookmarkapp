@@ -64,8 +64,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.use(cookieParser());
-app.use(express.urlencoded());
-app.use(express.json());
+
 
 app.use(express.session({ secret: 'keyboard cat' }));
 // Initialize Passport!  Also use passport.session() middleware, to support
