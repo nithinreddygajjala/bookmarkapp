@@ -5,7 +5,7 @@ var express = require('express')
   var mongoose=require('mongoose');
   var cookieParser=require('cookie-parser');
   mongoose.connect('mongodb://nithing:Ravinder8!@ds121171.mlab.com:21171/linkedinbookmark');
-
+var session = require('express-session');
 var port=process.env.PORT||3000;
 
 // API Access link for creating client ID and secret:
@@ -66,7 +66,7 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 
 
-app.use(express.session({ secret: 'keyboard cat' }));
+app.use(session({ secret: 'keyboard cat' }));
 // Initialize Passport!  Also use passport.session() middleware, to support
 // persistent login sessions (recommended).
 app.use(passport.initialize());

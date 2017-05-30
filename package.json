@@ -43,6 +43,7 @@
     "body-parser": "*",
     "cookie-parser": "*",
     "express": "*",
+    "express-session": "^1.15.3",
     "mongodb": "*",
     "mongoose": "*",
     "passport": "*",
