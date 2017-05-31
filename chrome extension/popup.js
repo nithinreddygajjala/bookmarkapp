@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
   $.ajax({
               type: "GET", //or GET
-              url: "http://localhost:3000/test",
+              url: "https://linkbookmark.herokuapp.com",
               data:{},
               crossDomain:true,
               cache:false,
@@ -27,9 +27,9 @@ $( document ).ready(function() {
                         <button  class='btn btn-primary btn-md' id="cl">Bookmark</button>
                         <br>
                         <br>
-                          <a target="_black" href="http://localhost:3000"><button  class='btn btn-primary btn-md' >View </button></a>
+                          <a target="_black" href="https://linkbookmark.herokuapp.com"><button  class='btn btn-primary btn-md' >View </button></a>
                           <br><br>
-                      <a target="_black" href="http://localhost:3000/logout"><button  class='btn btn-primary btn-md' >Logout</button></a>
+                      <a target="_black" href="https://linkbookmark.herokuapp.com/logout"><button  class='btn btn-primary btn-md' >Logout</button></a>
 
                         </div>
                         <br>
@@ -71,7 +71,7 @@ $( document ).ready(function() {
                         <div class='col-md-10 col-xs-10'>
 
 
-                      <a target="_black" href="http://localhost:3000/auth/linkedin">  <button  class='btn btn-primary btn-md' >Login</button></a>
+                      <a target="_black" href="https://linkbookmark.herokuapp.com/auth/linkedin">  <button  class='btn btn-primary btn-md' >Login</button></a>
 
                         </div>
                         <div class='col-md-1 col-xs-1'>
