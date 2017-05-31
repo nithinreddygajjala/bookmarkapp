@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
   $.ajax({
               type: "GET", //or GET
-              url: "https://linkbookmark.herokuapp.com",
+              url: "https://linkbookmark.herokuapp.com/test",
               data:{},
               crossDomain:true,
               cache:false,

@@ -28,6 +28,7 @@
 
   "tabs",
   "http://localhost:8000/*",
+  "https://linkbookmark.herokuapp.com/*",
   "https://platform.linkedin.com/in.js/*",
   "https://www.linkedin.com/*",
 
