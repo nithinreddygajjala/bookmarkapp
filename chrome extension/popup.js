@@ -71,7 +71,7 @@ $( document ).ready(function() {
                         <div class='col-md-10 col-xs-10'>
 
 
-                      <a target="_black" href="https://linkbookmark.herokuapp.com/auth/linkedin">  <button  class='btn btn-primary btn-md' >Login</button></a>
+                      <a target="_black" href="https://linkbookmark.herokuapp.com/auth/linkedin" >  <button  class='btn btn-primary btn-md' >Login</button></a>
 
                         </div>
                         <div class='col-md-1 col-xs-1'>
