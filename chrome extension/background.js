@@ -9,7 +9,7 @@
 
             $.ajax({
                         type: "POST", //or GET
-                        url: "https://linkbookmark.herokuapp.com",
+                        url: "https://linkbookmark.herokuapp.com/bookmark",
                         data:{name : request.name,place:request.place,title:request.title,pic:request.pic,note:request.note,url:request.url},
                         crossDomain:true,
                         cache:false,
